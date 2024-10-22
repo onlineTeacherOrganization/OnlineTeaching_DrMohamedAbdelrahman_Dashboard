@@ -17,6 +17,7 @@ class AddNewSubject extends Component {
     isAppear: "",
     LevelId: "",
     allLevels: [],
+    allFields:[],
     loadintable: false,
     ImageOrFile: {},
   };
@@ -65,6 +66,21 @@ class AddNewSubject extends Component {
       .catch((error) => {
         console.log(error);
       });
+
+      axios
+      .get(`${baseUrl}api/Specialty`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        if (res.status == 200) {
+          this.setState({
+            allFields: res.data.items,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {
@@ -95,6 +111,7 @@ class AddNewSubject extends Component {
       const formData = new FormData();
       const state = { ...this.state };
       delete state.allLevels;
+      delete state.allFields;
       delete state.loadintable;
       formData.append("file", this.state.ImageOrFile);
       Object.keys(state).forEach((key) => {
@@ -129,9 +146,13 @@ class AddNewSubject extends Component {
         });
     };
 
-    const options = this.state.allLevels.map((leve) => ({
+    const levelOptions = this.state.allLevels.map((leve) => ({
       value: leve.id,
       label: leve.levelName,
+    }));
+    const fieldOptions = this.state.allFields.map((leve) => ({
+      value: leve.id,
+      label: leve.name,
     }));
 
     const { Name, Price, LevelId, ImageOrFile, loadintable, isAppear } =
@@ -167,7 +188,7 @@ class AddNewSubject extends Component {
                       onChange={selectHandelChange}
                       placeholder="اختر المرحلة"
                       id="mLevelId"
-                      options={options}
+                      options={levelOptions}
                     />
                   </div>
                 </div>
@@ -175,11 +196,11 @@ class AddNewSubject extends Component {
                   <div className="form-group">
                     <label htmlFor="mLevelId">التخصص</label>
                     <Select
-                      name="LevelId"
+                      name="SpecialtyID"
                       onChange={selectHandelChange}
                       placeholder="اختر التخصص"
                       id="mLevelId"
-                      options={options}
+                      options={fieldOptions}
                     />
                   </div>
                 </div>
