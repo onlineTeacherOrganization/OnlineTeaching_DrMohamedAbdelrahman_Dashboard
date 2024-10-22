@@ -5,5 +5,9 @@
 // export const baseUrl = "https://api.golearn.site/";
 // export const baseUrl = "http://back.mrpetersalama.com/";
 export const baseUrl =
-  "https://www.exciting-swartz.162-220-162-242.plesk.page/";
+  // "https://www.exciting-swartz.162-220-162-242.plesk.page/";
+  "https://dazzling-wozniak.69-10-32-26.plesk.page/";
 // export const baseUrl = "http://ddd.somee.com/";
+
+// Admin@learning.com
+// Admin@123456

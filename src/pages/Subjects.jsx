@@ -287,6 +287,7 @@ class Subjects extends Component {
         { label: "الصورة", field: "theImage" },
         { label: "الاسم", field: "name" },
         { label: "اسم المرحلة", field: "levelname" },
+        { label: "اسم التخصص", field: "fieldname" },
         { label: "الاختيارات", field: "option" },
       ],
       rows: this.state.data,

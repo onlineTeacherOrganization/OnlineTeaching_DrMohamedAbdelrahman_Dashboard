@@ -56,6 +56,12 @@ class SideNav extends Component {
                   </NavLink>
                 </li>
                 <li>
+                  <NavLink exact to="/fields" activeClassName="activeLink">
+                    <i className="fas fa-layer-group"></i>
+                    <span>التخصصات</span>
+                  </NavLink>
+                </li>
+                <li>
                   <NavLink exact to="/levels" activeClassName="activeLink">
                     <i className="fas fa-layer-group"></i>
                     <span>المراحل</span>

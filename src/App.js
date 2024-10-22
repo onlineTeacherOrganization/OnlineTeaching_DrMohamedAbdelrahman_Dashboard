@@ -22,12 +22,14 @@ import TopHead from "./component/TopHead";
 import Dashboard from "./pages/Dashboard";
 import Subjects from "./pages/Subjects";
 import AddNewSubject from "./pages/AddNewSubject";
+import AddNewField from "./pages/AddNewField";
 import EditSubject from "./pages/EditSubject";
 import StudyLectures from "./pages/StudyLectures";
 import AddNewStudyLecture from './pages/AddNewStudyLecture';
 import AddNewOnlineLecture from './pages/AddNewOnlineLecture';
 import OnlineLectures from "./pages/OnlineLectures";
 import Levels from "./pages/Levels";
+import Fileds from "./pages/Fileds";
 import AddNewLevels from "./pages/AddNewLevels";
 import Review from "./pages/Review";
 import Settings from "./pages/Setting";
@@ -49,6 +51,7 @@ import Subscription2 from "./pages/Subscription2";
 import ReExamOrders from "./pages/ReExamOrders";
 import ReOpenLectures from "./pages/ReopenLectures";
 import StudentsGrades from "./pages/studentsGrades";
+import EditField from "./pages/EditField";
 
 export const history = createBrowserHistory({
   basename: process.env.PUBLIC_URL
@@ -113,6 +116,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/subjects" component={Subjects} />
               <Route exact path="/add-new-subject" component={AddNewSubject} />
+              <Route exact path="/add-new-field" component={AddNewField} />
               <Route exact path="/edit-subject/:id" component={EditSubject} />
               <Route exact path="/study-lectures" component={StudyLectures} />
               <Route exact path="/add-new-study-lecture" component={AddNewStudyLecture} />
@@ -120,9 +124,11 @@ class App extends Component {
               <Route exact path="/online-lectures" component={OnlineLectures} />
               <Route exact path="/add-new-online-lecture" component={AddNewOnlineLecture} />
               <Route exact path="/edit-online-lecture/:id" component={EditOnlineLecture} />
+              <Route exact path="/fields" component={Fileds} />
               <Route exact path="/levels" component={Levels} />
               <Route exact path="/add-new-level" component={AddNewLevels} />
               <Route exact path="/edit-level/:id" component={EditLevel} />
+              <Route exact path="/edit-field/:id" component={EditField} />
               <Route exact path="/reviews" component={Review} />
               <Route exact path="/settings" component={Settings} />
               <Route exact path="/students"component={Students} />

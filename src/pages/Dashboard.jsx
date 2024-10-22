@@ -59,7 +59,7 @@ class Dashboard extends Component {
         <div className="dashboard-content">
           <div className="statistics">
             <div className="row">
-              <div className="col-sm-12 col-md-6 col-lg-4">
+              <div className="col-sm-12 col-md-6 col-lg-3">
                 <div className="statics-card">
                   <h5 className="card-title">عدد الطلبه</h5>
                   <div className="card-body">
@@ -79,7 +79,7 @@ class Dashboard extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-sm-12 col-md-6 col-lg-4">
+              <div className="col-sm-12 col-md-6 col-lg-3">
                 <div className="statics-card">
                   <h5 className="card-title">عدد الملفات</h5>
                   <div className="card-body">
@@ -97,9 +97,29 @@ class Dashboard extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-sm-12 col-md-6 col-lg-4">
+              <div className="col-sm-12 col-md-6 col-lg-3">
                 <div className="statics-card">
                   <h5 className="card-title">عدد المحاضرات</h5>
+                  <div className="card-body">
+                    {loading ? (
+                      <CircularProgress />
+                    ) : (
+                      <>
+                        <h5 className="card-number">
+                          {homeNymber.lecturesCount}
+                        </h5>
+                        <img
+                          src={`${sourceBaseForImage}/download1.png`}
+                          alt=""
+                        />
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="col-sm-12 col-md-6 col-lg-3">
+                <div className="statics-card">
+                  <h5 className="card-title">عدد التخصصات</h5>
                   <div className="card-body">
                     {loading ? (
                       <CircularProgress />

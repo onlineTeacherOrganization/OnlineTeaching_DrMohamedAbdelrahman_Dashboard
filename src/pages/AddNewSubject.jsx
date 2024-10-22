@@ -145,7 +145,7 @@ class AddNewSubject extends Component {
           <div className="dasboard-box">
             <form action="" onSubmit={subjectSubmitForm} className="formStyle">
               <div className="row">
-                <div className="col-sm-12 col-md-6 col-lg-6">
+                <div className="col-sm-12 col-md-6 col-lg-4">
                   <div className="form-group">
                     <label htmlFor="subjecName">اسم المادة</label>
                     <input
@@ -159,13 +159,25 @@ class AddNewSubject extends Component {
                     />
                   </div>
                 </div>
-                <div className="col-sm-12 col-md-6 col-lg-6">
+                <div className="col-sm-12 col-md-6 col-lg-4">
                   <div className="form-group">
                     <label htmlFor="mLevelId">المرحلة</label>
                     <Select
                       name="LevelId"
                       onChange={selectHandelChange}
                       placeholder="اختر المرحلة"
+                      id="mLevelId"
+                      options={options}
+                    />
+                  </div>
+                </div>
+                <div className="col-sm-12 col-md-6 col-lg-4">
+                  <div className="form-group">
+                    <label htmlFor="mLevelId">التخصص</label>
+                    <Select
+                      name="LevelId"
+                      onChange={selectHandelChange}
+                      placeholder="اختر التخصص"
                       id="mLevelId"
                       options={options}
                     />
